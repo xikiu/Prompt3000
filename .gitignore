@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Production builds
+.output/
+dist/
+
+# WXT internal cache
+.wxt/
+
+# Environment files
+.env
+.env.local
+*.local
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,48 @@
+{
+  "name": "prompt3000",
+  "version": "1.0.0",
+  "description": "> **Turn messy thoughts into high-performing AI prompts — effortlessly.**   > Skip the tedious typing with intelligent voice shortcuts and instant prompt enhancement, delivered directly to your favorite browser.",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "dev:safari": "wxt -b safari",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "build:safari": "wxt build -b safari",
+    "build:safari:app": "npm run build:safari && DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcrun safari-web-extension-converter .output/safari-mv2 --project-location .output/safari-app --app-name Prompt3000 --swift --macos-only --no-open --no-prompt --force",
+    "open:safari": "open .output/safari-app/Prompt3000/Prompt3000.xcodeproj",
+    "run:safari": "DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild -project .output/safari-app/Prompt3000/Prompt3000.xcodeproj -scheme \"Prompt3000\" -destination \"platform=macOS\" CODE_SIGN_IDENTITY=\"\" CODE_SIGNING_REQUIRED=NO CODE_SIGN_ENTITLEMENTS=\"\" CODE_SIGNING_ALLOWED=NO build && open $(find ~/Library/Developer/Xcode/DerivedData/Prompt3000-*/Build/Products/Debug -name \"Prompt3000.app\" -maxdepth 1)",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xikiu/Prompt3000.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xikiu/Prompt3000/issues"
+  },
+  "homepage": "https://github.com/xikiu/Prompt3000#readme",
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@wxt-dev/module-react": "^1.2.2",
+    "autoprefixer": "^10.6.0",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^7.0.2",
+    "wxt": "^0.21.4"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.46.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwind-merge": "^3.7.0"
+  }
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="p3k-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#2563eb" flood-opacity="0.2" />
+    </filter>
+  </defs>
+  
+  <rect width="128" height="128" rx="28" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
+  
+  <!-- Central Sparkle / Prompt Bolt Symbol in Blue -->
+  <g transform="translate(16, 16)">
+    <!-- Outer accent ring -->
+    <circle cx="48" cy="48" r="42" fill="none" stroke="url(#p3k-blue)" stroke-width="2.5" stroke-dasharray="8 6" opacity="0.4" />
+    
+    <!-- Microphone & Sparkle Concept -->
+    <path d="M48 20 C42 20 37 25 37 31 L37 47 C37 53 42 58 48 58 C54 58 59 53 59 47 L59 31 C59 25 54 20 48 20 Z" fill="url(#p3k-blue)" filter="url(#shadow)" />
+    <path d="M28 43 C28 54 37 63 48 63 C59 63 68 54 68 43" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" />
+    <path d="M48 63 L48 76" stroke="#2563eb" stroke-width="4" stroke-linecap="round" />
+    <path d="M36 76 L60 76" stroke="#2563eb" stroke-width="4" stroke-linecap="round" />
+    
+    <!-- Sparkles -->
+    <path d="M72 22 L75 14 L78 22 L86 25 L78 28 L75 36 L72 28 L64 25 Z" fill="#0284c7" />
+    <path d="M20 28 L22 22 L24 28 L30 30 L24 32 L22 38 L20 32 L14 30 Z" fill="#3b82f6" />
+  </g>
+</svg>

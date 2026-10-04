@@ -52,15 +52,21 @@ flowchart LR
 
 ---
 
-## 🎯 Target AI Platforms
+## 🎯 Target AI Platforms (LLM-Exclusive Scoping)
 
-Prompt3000 works seamlessly wherever you interact with LLMs:
-- **OpenAI ChatGPT**
-- **Anthropic Claude**
-- **Google Gemini**
-- **Perplexity AI**
-- **DeepSeek**
-- Any custom web-based LLM UI or textarea!
+For optimal privacy, performance, and a clean browsing experience, Prompt3000 is intentionally restricted to activate **only on dedicated LLM websites** (it will never inject or run on regular websites):
+- **OpenAI ChatGPT** (`chatgpt.com`, `chat.openai.com`)
+- **Anthropic Claude** (`claude.ai`)
+- **Google Gemini & AI Studio** (`gemini.google.com`, `aistudio.google.com`)
+- **Perplexity AI** (`perplexity.ai`)
+- **DeepSeek** (`deepseek.com`, `chat.deepseek.com`)
+- **Microsoft Copilot** (`copilot.microsoft.com`)
+- **Mistral Le Chat** (`chat.mistral.ai`)
+- **Grok / xAI** (`grok.com`, `x.com/i/grok`)
+- **Poe** (`poe.com`)
+- **Phind** (`phind.com`)
+- **HuggingChat** (`huggingface.co/chat`)
+- **v0 by Vercel** (`v0.dev`)
 
 ---
 
@@ -83,19 +89,52 @@ Prompt3000 works seamlessly wherever you interact with LLMs:
 - Node.js (v18+)
 - npm / pnpm / yarn
 
-### Getting Started (Local Development Preview)
+### Getting Started (Local Development)
+
 ```bash
 # Clone the repository
 git clone https://github.com/xikiu/Prompt3000.git
 cd Prompt3000
 
-# Install dependencies (once setup)
+# Install dependencies
 npm install
 
-# Build for your browser of choice
-npm run build:chrome
-npm run build:firefox
+# Start development server with live reload
+npm run dev              # Targets Chrome (Chromium/Brave/Edge)
+npm run dev:firefox      # Targets Firefox
+npm run dev:safari       # Targets Safari
+
+# Build production extensions
+npm run build            # Chrome MV3 (.output/chrome-mv3)
+npm run build:firefox    # Firefox MV2/MV3 (.output/firefox-mv2)
+npm run build:safari     # Safari WebExtension (.output/safari-mv2)
+
+# Type check
+npm run compile
 ```
+
+### Loading the Extension in Browsers
+
+1. **Google Chrome / Brave / Edge**:
+   - Navigate to `chrome://extensions/`
+   - Enable **Developer mode** (top right)
+   - Click **Load unpacked** and select the `.output/chrome-mv3` folder.
+
+2. **Mozilla Firefox**:
+   - Navigate to `about:debugging#/runtime/this-firefox`
+   - Click **Load Temporary Add-on...**
+   - Select `manifest.json` inside the `.output/firefox-mv2` folder.
+
+3. **Apple Safari**:
+   - **Step 1**: In Safari, open **Settings (`⌘,`) > Advanced** and check **"Show features for web developers"**.
+   - **Step 2**: In the menu bar under **Develop**, check **"Allow Unsigned Extensions"**.
+   - **Step 3**: Run the app:
+     ```bash
+     npm run build:safari:app
+     npm run run:safari
+     # or open in Xcode: npm run open:safari
+     ```
+   - **Step 4**: Go to **Safari > Settings > Extensions** and check the box next to **Prompt3000**.
 
 ---
 
